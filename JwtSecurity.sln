@@ -7,7 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{429F245D-FF0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aloji.Owin.JwtSecurity", "src\Aloji.Owin.JwtSecurity\Aloji.Owin.JwtSecurity.csproj", "{83C9F699-18DA-4446-8D64-98B5DCA0BFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aloji.JwtSecurity", "src\Aloji.JwtSecurity\Aloji.JwtSecurity.csproj", "{E8C699A5-0A0D-4DC9-840C-8ECB73146BD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aloji.JwtSecurity", "src\Aloji.JwtSecurity\Aloji.JwtSecurity.csproj", "{E8C699A5-0A0D-4DC9-840C-8ECB73146BD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{47234426-8794-410E-8692-5547EC52D012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer.Owin.NetFramework", "samples\AuthServer.Owin.NetFramework\AuthServer.Owin.NetFramework.csproj", "{AFA43B9A-6130-45EE-83C4-E042C43C7DAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,10 @@ Global
 		{E8C699A5-0A0D-4DC9-840C-8ECB73146BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8C699A5-0A0D-4DC9-840C-8ECB73146BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8C699A5-0A0D-4DC9-840C-8ECB73146BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA43B9A-6130-45EE-83C4-E042C43C7DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA43B9A-6130-45EE-83C4-E042C43C7DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA43B9A-6130-45EE-83C4-E042C43C7DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA43B9A-6130-45EE-83C4-E042C43C7DAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{83C9F699-18DA-4446-8D64-98B5DCA0BFEE} = {429F245D-FF00-49F4-82EE-4CEC94921166}
 		{E8C699A5-0A0D-4DC9-840C-8ECB73146BD1} = {429F245D-FF00-49F4-82EE-4CEC94921166}
+		{AFA43B9A-6130-45EE-83C4-E042C43C7DAE} = {47234426-8794-410E-8692-5547EC52D012}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {244A9460-73E8-463A-9F20-ACAA4A02D27C}
