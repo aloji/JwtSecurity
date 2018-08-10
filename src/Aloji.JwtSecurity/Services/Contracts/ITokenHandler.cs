@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 
@@ -8,5 +9,6 @@ namespace Aloji.JwtSecurity.Services.Contracts
     {
         string GenerateToken(IEnumerable<Claim> claims, DateTime? notBefore, DateTime? expires);
         ClaimsPrincipal ValidateToken(string token);
+        TokenValidationParameters TokenValidationParameters { get; }
     }
 }

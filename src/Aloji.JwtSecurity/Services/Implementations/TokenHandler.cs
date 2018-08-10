@@ -38,18 +38,25 @@ namespace Aloji.JwtSecurity.Services.Implementations
 
         public virtual ClaimsPrincipal ValidateToken(string token)
         {
-            var tokenValidationParameters = new TokenValidationParameters()
-            {
-                ValidIssuer = options.Issuer,
-                ValidateAudience = false,
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = symmetricSecurityKey
-            };
-
             var result = new JwtSecurityTokenHandler()
-                .ValidateToken(token, tokenValidationParameters, out SecurityToken validatedToken);
+                .ValidateToken(token, this.TokenValidationParameters, out SecurityToken validatedToken);
 
             return result;
+        }
+
+        public virtual TokenValidationParameters TokenValidationParameters
+        {
+            get
+            {
+                var result = new TokenValidationParameters()
+                {
+                    ValidIssuer = options.Issuer,
+                    ValidateAudience = false,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = symmetricSecurityKey
+                };
+                return result;
+            }
         }
     }
 }
