@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System.Security.Claims;
+using System.Web.Http;
+using System.Linq;
 
 namespace ResourceServer.NetFramewok.Controllers
 {
@@ -6,9 +8,16 @@ namespace ResourceServer.NetFramewok.Controllers
     public class ValuesController : ApiController
     {
         [HttpGet]
-        public string Index()
+        public IHttpActionResult Get()
         {
-            return "ResourceServer.NetFramewok";
+            var identity = User?.Identity as ClaimsIdentity;
+            var result = new
+            {
+                Name = "ResourceServer.NetFramewok",
+                UserName = identity?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Surname)?.Value
+            };
+
+            return Ok(result);
         }
     }
 }
