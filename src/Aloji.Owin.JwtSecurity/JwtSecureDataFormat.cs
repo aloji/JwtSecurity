@@ -9,7 +9,7 @@ namespace Aloji.Owin.JwtSecurity
 {
     public class JwtSecureDataFormat : ISecureDataFormat<AuthenticationTicket>
     {
-        readonly ITokenHandler iTokenHandler;
+        protected readonly ITokenHandler iTokenHandler;
 
         public JwtSecureDataFormat(ITokenHandler iTokenHandler)
         {
