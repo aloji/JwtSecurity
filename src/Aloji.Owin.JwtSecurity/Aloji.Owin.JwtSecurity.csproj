@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MachineKeyCompatibiltyDataFormat.cs" />
+    <Compile Include="MachineKeyCompatibilityDataFormat.cs" />
     <Compile Include="JwtSecureDataFormat.cs" />
     <Compile Include="MachineKeyProtector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

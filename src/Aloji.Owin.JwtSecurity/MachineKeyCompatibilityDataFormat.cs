@@ -6,21 +6,27 @@ using Microsoft.Owin.Security.DataHandler;
 
 namespace Aloji.Owin.JwtSecurity
 {
-    public class MachineKeyCompatibiltyDataFormat : JwtSecureDataFormat
+    public class MachineKeyCompatibilityDataFormat : JwtSecureDataFormat
     {
-        public MachineKeyCompatibiltyDataFormat(ITokenHandler iTokenHandler)
+        public MachineKeyCompatibilityDataFormat(ITokenHandler iTokenHandler)
             : base(iTokenHandler)
         {
         }
 
-        public MachineKeyCompatibiltyDataFormat(JwtSecurityOptions jwtSecurityOptions)
+        public MachineKeyCompatibilityDataFormat(JwtSecurityOptions jwtSecurityOptions)
             : this(new TokenHandler(jwtSecurityOptions))
         {
         }
 
         public override AuthenticationTicket Unprotect(string protectedText)
         {
-            var result = base.Unprotect(protectedText);
+            var result = default(AuthenticationTicket);
+            try
+            {
+                result = base.Unprotect(protectedText);
+            }
+            catch{ }
+
             if (result == null)
             {
                 var secureDataFormat = new TicketDataFormat(new MachineKeyProtector());
