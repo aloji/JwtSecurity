@@ -60,6 +60,26 @@ public class Startup
 }
 ```
 
+How to setup the JwtSecurity in Resource Server .NetFramework with Owin Auth Compatibility
+
+```csharp
+public class Startup
+{
+    public void Configuration(IAppBuilder appBuilder)
+    {
+        appBuilder.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
+        {
+            AccessTokenFormat = new MachineKeyCompatibilityDataFormat(
+                new JwtSecurityOptions
+                {
+                    Issuer = "yourIssuerCode",
+                    IssuerSigningKey = "yourIssuerSigningKeyCode"
+                })
+        });
+    }
+}
+```
+
 How to setup the JwtSecurity in Resource Server .NetCore ([full sample code](https://github.com/aloji/JwtSecurity/blob/master/samples/ResourceServer.AspNetCore/Startup.cs))
 
 ```csharp
