@@ -19,7 +19,10 @@ namespace Microsoft.Extensions.DependencyInjection
 
             var tokenHandler = new TokenHandler(jwtSecurityOptions);
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(
+                options => {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = tokenHandler.TokenValidationParameters;
