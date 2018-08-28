@@ -2,6 +2,8 @@
 
 The object is to allow using a token generated in an OWIN OAuth 2.0 Server in AspNet.Core projects.
 
+#### Nugets: https://www.nuget.org/profiles/aloji
+
 ## Real life problem
 
 We have the authorization server implemented with [OWIN OAuth 2.0](https://docs.microsoft.com/en-us/aspnet/aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server), but the new developments are with AspNetCore
