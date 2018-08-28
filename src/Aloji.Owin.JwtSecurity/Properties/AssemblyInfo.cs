@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Aloji.Owin.JwtSecurity")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("JwtServer Owin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Aloji.Owin.JwtSecurity")]
+[assembly: AssemblyCompany("Aloji")]
+[assembly: AssemblyProduct("Aloji.JwtSecurity")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

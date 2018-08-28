@@ -9,12 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aloji.AspNetCore.JwtSecurity" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Aloji.AspNetCore.JwtSecurity\Aloji.AspNetCore.JwtSecurity.csproj" />
-    <ProjectReference Include="..\..\src\Aloji.JwtSecurity\Aloji.JwtSecurity.csproj" />
   </ItemGroup>
 
 </Project>

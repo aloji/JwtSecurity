@@ -40,6 +40,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aloji.JwtSecurity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Aloji.JwtSecurity.1.0.1\lib\net451\Aloji.JwtSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="Aloji.Owin.JwtSecurity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Aloji.Owin.JwtSecurity.1.0.0\lib\net451\Aloji.Owin.JwtSecurity.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.IdentityModel.JsonWebTokens.5.2.4\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
@@ -117,7 +123,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -129,16 +137,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Aloji.JwtSecurity\Aloji.JwtSecurity.csproj">
-      <Project>{e8c699a5-0a0d-4dc9-840c-8ecb73146bd1}</Project>
-      <Name>Aloji.JwtSecurity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Aloji.Owin.JwtSecurity\Aloji.Owin.JwtSecurity.csproj">
-      <Project>{83c9f699-18da-4446-8d64-98b5dca0bfee}</Project>
-      <Name>Aloji.Owin.JwtSecurity</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

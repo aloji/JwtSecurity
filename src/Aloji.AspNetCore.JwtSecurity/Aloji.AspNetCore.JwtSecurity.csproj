@@ -2,15 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Aloji</Authors>
+    <Product>JwtSecurity</Product>
+    <RepositoryUrl>https://github.com/aloji/JwtSecurity</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aloji.JwtSecurity" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Aloji.JwtSecurity\Aloji.JwtSecurity.csproj" />
   </ItemGroup>
 
 </Project>
