@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/aloji/Aloji/_apis/build/status/aloji.JwtSecurity?branchName=master)](https://dev.azure.com/aloji/Aloji/_build/latest?definitionId=2&branchName=master)
+
 # JwtSecurity
 
 The object is to allow using a token generated in an OWIN OAuth 2.0 Server in AspNet.Core projects.
