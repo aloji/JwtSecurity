@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/aloji/Aloji/_apis/build/status/aloji.JwtSecurity?branchName=master)](https://dev.azure.com/aloji/Aloji/_build/latest?definitionId=2&branchName=master)
+[![Build status](https://dev.azure.com/aloji/Aloji/_apis/build/status/JwtSecurity)](https://dev.azure.com/aloji/Aloji/_build/latest?definitionId=6)
 
 # JwtSecurity
 
