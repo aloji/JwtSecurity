@@ -8,15 +8,22 @@ namespace Aloji.AspNetCore.JwtSecurity.Services.Implementations
     public class AuthorizationServerProvider : IAuthorizationServerProvider
     {
         public Func<GrantResourceOwnerCredentialsContext, Task> OnGrantResourceOwnerCredentialsAsync { get; set; }
+        public Func<GrantRefreshTokenContext, Task> OnGrantRefreshToken { get; set; }
 
         public AuthorizationServerProvider()
         {
             this.OnGrantResourceOwnerCredentialsAsync = context => Task.FromResult<object>(null);
+            this.OnGrantRefreshToken = context => Task.FromResult<object>(null);
         }
 
         public virtual Task GrantClientCredentialsAsync(GrantResourceOwnerCredentialsContext context)
         {
             return this.OnGrantResourceOwnerCredentialsAsync.Invoke(context);
+        }
+
+        public virtual Task GrantRefreshTokenAsync(GrantRefreshTokenContext context)
+        {
+            return this.OnGrantRefreshToken.Invoke(context);
         }
     }
 }

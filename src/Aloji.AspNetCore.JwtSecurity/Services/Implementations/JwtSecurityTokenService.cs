@@ -5,21 +5,15 @@ using Aloji.AspNetCore.JwtSecurity.Services.Contracts;
 using Aloji.JwtSecurity.Services.Implementations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System;
+using System.Threading.Tasks;
 
 namespace Aloji.AspNetCore.JwtSecurity.Services.Implementations
 {
     public class JwtSecurityTokenService : IJwtSecurityTokenService
     {
-        public virtual JwtToken Create(BaseValidatingContext baseValidatingContext, JwtServerOptions jwtServerOptions)
+        public virtual async Task<JwtToken> CreateAsync(BaseValidatingContext baseValidatingContext, JwtServerOptions jwtServerOptions)
         {
-            if (baseValidatingContext == null)
-            {
-                throw new ArgumentNullException(nameof(baseValidatingContext));
-            }
-            if (jwtServerOptions == null)
-            {
-                throw new ArgumentNullException(nameof(jwtServerOptions));
-            }
+            Validate();
 
             var tokenHadler = new TokenHandler(jwtServerOptions);
             var startingDate = DateTime.UtcNow;
@@ -36,6 +30,25 @@ namespace Aloji.AspNetCore.JwtSecurity.Services.Implementations
                 ExpiresIn = this.GetTokenExpiral(startingDate, expiresDate),
                 TokenType = JwtBearerDefaults.AuthenticationScheme
             };
+
+            if (jwtServerOptions.RefreshTokenProvider != null)
+            {
+                var refreshToken = await jwtServerOptions.RefreshTokenProvider.GenerateAsync(baseValidatingContext.Claims);
+                if (!string.IsNullOrWhiteSpace(refreshToken))
+                    result.RefreshToken = refreshToken;
+            }
+
+            void Validate() 
+            {
+                if (baseValidatingContext == null)
+                {
+                    throw new ArgumentNullException(nameof(baseValidatingContext));
+                }
+                if (jwtServerOptions == null)
+                {
+                    throw new ArgumentNullException(nameof(jwtServerOptions));
+                }
+            }
 
             return result;
         }

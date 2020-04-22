@@ -9,5 +9,6 @@ namespace Aloji.AspNetCore.JwtSecurity.Options
         public IAuthorizationServerProvider AuthorizationServerProvider { get; set; }
         public TimeSpan AccessTokenExpireTimeSpan { get; set; }
         public string TokenEndpointPath { get; set; }
+        public IRefreshTokenProvider RefreshTokenProvider { get; set; }
     }
 }

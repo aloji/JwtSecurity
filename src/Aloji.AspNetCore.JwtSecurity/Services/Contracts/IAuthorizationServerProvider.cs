@@ -6,5 +6,6 @@ namespace Aloji.AspNetCore.JwtSecurity.Services.Contracts
     public interface IAuthorizationServerProvider
     {
         Task GrantClientCredentialsAsync(GrantResourceOwnerCredentialsContext context);
+        Task GrantRefreshTokenAsync(GrantRefreshTokenContext context);
     }
 }
