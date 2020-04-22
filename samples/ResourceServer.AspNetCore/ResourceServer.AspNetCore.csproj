@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aloji.AspNetCore.JwtSecurity" Version="1.0.0" />
+    <PackageReference Include="Aloji.AspNetCore.JwtSecurity" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 

@@ -59,6 +59,23 @@ namespace AuthServer.AspNetCore
 
                         context.Validated(claims);
                         await Task.FromResult(0);
+                    },
+                    OnGrantRefreshToken = async (context) => 
+                    {
+                        if (Guid.TryParse(context.Token, out Guid token))
+                        {
+                            var claims = new List<Claim> { };
+                            context.Validated(claims);
+                        }
+                        await Task.FromResult(0);
+                    }
+                };
+                options.RefreshTokenProvider = new RefreshTokenProvider 
+                {
+                    OnGenerateAsync = async (claims) => 
+                    {
+                        var token = Guid.NewGuid().ToString();
+                        return await Task.FromResult(token);
                     }
                 };
             });
